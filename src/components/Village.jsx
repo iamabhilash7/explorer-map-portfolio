@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { profileData } from "@/data/portfolio";
+import { profileData } from "@/data/portfolio.js";
 import { MapPin, Briefcase, Heart, GraduationCap } from "lucide-react";
 
 const funFactIcons = [GraduationCap, MapPin, Heart, Briefcase];
 
 const Village = () => {
-  const [activeFact, setActiveFact] = useState<number | null>(null);
+  const [activeFact, setActiveFact] = useState(null);
 
   return (
     <div className="space-y-8 animate-fade-in">

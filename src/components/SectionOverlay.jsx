@@ -1,14 +1,7 @@
 import { useEffect, useState } from "react";
 import { X } from "lucide-react";
 
-interface SectionOverlayProps {
-  isOpen: boolean;
-  onClose: () => void;
-  title: string;
-  children: React.ReactNode;
-}
-
-const SectionOverlay = ({ isOpen, onClose, title, children }: SectionOverlayProps) => {
+const SectionOverlay = ({ isOpen, onClose, title, children }) => {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {

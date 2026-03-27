@@ -39,15 +39,15 @@ export const projects = [
 ];
 
 export const skills = [
-  { name: "HTML5", level: 90, color: "ocean" as const },
-  { name: "CSS", level: 85, color: "forest" as const },
-  { name: "JavaScript", level: 80, color: "gold" as const },
-  { name: "Python", level: 85, color: "forest" as const },
-  { name: "Java", level: 70, color: "ocean" as const },
-  { name: "C", level: 65, color: "mountain" as const },
-  { name: "MySQL", level: 70, color: "gold" as const },
-  { name: "Bootstrap", level: 75, color: "ocean" as const },
-  { name: "Git & GitHub", level: 80, color: "forest" as const },
+  { name: "HTML5", level: 90, color: "ocean" },
+  { name: "CSS", level: 85, color: "forest" },
+  { name: "JavaScript", level: 80, color: "gold" },
+  { name: "Python", level: 85, color: "forest" },
+  { name: "Java", level: 70, color: "ocean" },
+  { name: "C", level: 65, color: "mountain" },
+  { name: "MySQL", level: 70, color: "gold" },
+  { name: "Bootstrap", level: 75, color: "ocean" },
+  { name: "Git & GitHub", level: 80, color: "forest" },
 ];
 
 export const experiments = [

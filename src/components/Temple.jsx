@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { profileData } from "@/data/portfolio";
+import { profileData } from "@/data/portfolio.js";
 import { Mail, Phone, Linkedin, Github, Send, CheckCircle } from "lucide-react";
 import { toast } from "sonner";
 
@@ -7,13 +7,12 @@ const Temple = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
       toast.error("Please fill in all fields");
       return;
     }
-    // Simulate submission
     setSubmitted(true);
     toast.success("Message sent successfully! ✨");
     setTimeout(() => {
@@ -55,8 +54,8 @@ const Temple = () => {
       ) : (
         <form onSubmit={handleSubmit} className="space-y-4 max-w-lg mx-auto">
           {[
-            { key: "name" as const, label: "Your Name", type: "text" },
-            { key: "email" as const, label: "Your Email", type: "email" },
+            { key: "name", label: "Your Name", type: "text" },
+            { key: "email", label: "Your Email", type: "email" },
           ].map((field) => (
             <div key={field.key}>
               <label className="font-subheading text-sm text-brown-dark mb-1 block">{field.label}</label>

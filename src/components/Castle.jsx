@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { projects } from "@/data/portfolio";
-import { ExternalLink, Github } from "lucide-react";
+import { projects } from "@/data/portfolio.js";
+import { Github } from "lucide-react";
 
 const Castle = () => {
-  const [openChest, setOpenChest] = useState<number | null>(null);
+  const [openChest, setOpenChest] = useState(null);
 
   return (
     <div className="space-y-6 animate-fade-in">

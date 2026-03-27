@@ -1,4 +1,4 @@
-import { skills } from "@/data/portfolio";
+import { skills } from "@/data/portfolio.js";
 
 const colorMap = {
   ocean: { bg: "bg-ocean/20", fill: "bg-ocean", text: "text-ocean-deep" },
@@ -7,7 +7,7 @@ const colorMap = {
   mountain: { bg: "bg-mountain/20", fill: "bg-mountain", text: "text-foreground" },
 };
 
-const crystalEmoji: Record<string, string> = {
+const crystalEmoji = {
   "HTML5": "🔮",
   "CSS": "🌸",
   "JavaScript": "💎",

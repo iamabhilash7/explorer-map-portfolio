@@ -5,16 +5,14 @@ import castleIcon from "@/assets/castle-icon.png";
 import forestIcon from "@/assets/forest-icon.png";
 import islandIcon from "@/assets/island-icon.png";
 import templeIcon from "@/assets/temple-icon.png";
-import MapLocation from "@/components/MapLocation";
-import SectionOverlay from "@/components/SectionOverlay";
-import CloudLayer from "@/components/CloudLayer";
-import Village from "@/components/Village";
-import Castle from "@/components/Castle";
-import Forest from "@/components/Forest";
-import Island from "@/components/Island";
-import Temple from "@/components/Temple";
-
-type SectionKey = "village" | "castle" | "forest" | "island" | "temple" | null;
+import MapLocation from "@/components/MapLocation.jsx";
+import SectionOverlay from "@/components/SectionOverlay.jsx";
+import CloudLayer from "@/components/CloudLayer.jsx";
+import Village from "@/components/Village.jsx";
+import Castle from "@/components/Castle.jsx";
+import Forest from "@/components/Forest.jsx";
+import Island from "@/components/Island.jsx";
+import Temple from "@/components/Temple.jsx";
 
 const sectionConfig = {
   village: { label: "About Me", icon: villageIcon, x: "12%", y: "45%", title: "🏘️ The Village — About Me" },
@@ -24,7 +22,7 @@ const sectionConfig = {
   temple: { label: "Contact", icon: templeIcon, x: "72%", y: "65%", title: "🛕 The Temple — Contact" },
 };
 
-const sectionComponents: Record<string, React.FC> = {
+const sectionComponents = {
   village: Village,
   castle: Castle,
   forest: Forest,
@@ -33,7 +31,7 @@ const sectionComponents: Record<string, React.FC> = {
 };
 
 const Index = () => {
-  const [activeSection, setActiveSection] = useState<SectionKey>(null);
+  const [activeSection, setActiveSection] = useState(null);
   const [easterEggFound, setEasterEggFound] = useState(false);
 
   return (
@@ -66,14 +64,14 @@ const Index = () => {
 
       {/* Map locations */}
       <div className="absolute inset-0 z-20">
-        {(Object.entries(sectionConfig) as [string, typeof sectionConfig.village][]).map(([key, config], i) => (
+        {Object.entries(sectionConfig).map(([key, config], i) => (
           <MapLocation
             key={key}
             icon={config.icon}
             label={config.label}
             x={config.x}
             y={config.y}
-            onClick={() => setActiveSection(key as SectionKey)}
+            onClick={() => setActiveSection(key)}
             delay={i * 200}
           />
         ))}
@@ -101,7 +99,7 @@ const Index = () => {
       )}
 
       {/* Section overlays */}
-      {(Object.entries(sectionConfig) as [string, typeof sectionConfig.village][]).map(([key, config]) => {
+      {Object.entries(sectionConfig).map(([key, config]) => {
         const Component = sectionComponents[key];
         return (
           <SectionOverlay

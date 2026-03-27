@@ -1,4 +1,4 @@
-import { experiments } from "@/data/portfolio";
+import { experiments } from "@/data/portfolio.js";
 import { Award, Briefcase } from "lucide-react";
 
 const Island = () => {

@@ -1,17 +1,8 @@
 import { useState, useCallback } from "react";
 
-interface MapLocationProps {
-  icon: string;
-  label: string;
-  x: string;
-  y: string;
-  onClick: () => void;
-  delay?: number;
-}
-
-const MapLocation = ({ icon, label, x, y, onClick, delay = 0 }: MapLocationProps) => {
+const MapLocation = ({ icon, label, x, y, onClick, delay = 0 }) => {
   const [isHovered, setIsHovered] = useState(false);
-  const [particles, setParticles] = useState<{ id: number; x: number; y: number }[]>([]);
+  const [particles, setParticles] = useState([]);
 
   const spawnParticles = useCallback(() => {
     const newParticles = Array.from({ length: 5 }, (_, i) => ({
